@@ -46,7 +46,7 @@ var turn = 0;
 
     
         if(turn % 2 === 0){
-            box.style.backgroundImage = "url('https://cdn-icons-png.flaticon.com/512/59/59254.png')"
+            box.style.backgroundImage = "url('img/croix.png')"
             box.style.backgroundSize = "70px"
             box.style.backgroundRepeat = "no-repeat"
             box.style.backgroundPosition = "center"
@@ -54,7 +54,7 @@ var turn = 0;
             oturn.style.display ="inline"
             xturn.style.display ="none"
         }else{
-            box.style.backgroundImage = "url('https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Cercle_rouge_100%25.svg/768px-Cercle_rouge_100%25.svg.png')"
+            box.style.backgroundImage = "url('img/cercle.png')"
             box.style.backgroundSize = "70px"
             box.style.backgroundRepeat = "no-repeat"
             box.style.backgroundPosition = "center"
