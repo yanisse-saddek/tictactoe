@@ -1,8 +1,15 @@
-var turn = 0;
+function game(){
+    appgame = document.getElementById('game-interface')
+    appgame.style.display = "inline"
+    menu = document.getElementById('menu-interface')
+    menu.style.display = "none"
+}
+    var turn = "x";
     var boxList = ["","","","","","","","",""]
     win = ""
     function restart(){
-        location.reload()
+        boxList = ["","","","","","","","",""]
+        $("#game-interface").load(location.href + " #game-interface");
     }
     function checkWin(){
         oturn = document.getElementById('o-turn');
@@ -18,8 +25,7 @@ var turn = 0;
         allBox[i].onclick = null;
         oturn.style.display ="none"
         xturn.style.display ="none"
-
-        xwin.style.display ="inline"      
+        xwin.style.display ="inline" 
         }
         }else if(win == "o"){
         console.log('o a gagné')
@@ -35,9 +41,8 @@ var turn = 0;
         xturn.style.display ="none"
         egalite.style.display ="inline"     
         }
-    }
+        }
     function checkCase(id){
-        turn++
         box = document.getElementById(id);
         oturn = document.getElementById('o-turn');
         xturn = document.getElementById('x-turn');
@@ -45,7 +50,7 @@ var turn = 0;
         textinfo.style.display = "INLINE "
 
     
-        if(turn % 2 === 0){
+        if(turn == "x"){
             box.style.backgroundImage = "url('img/croix.png')"
             box.style.backgroundSize = "70px"
             box.style.backgroundRepeat = "no-repeat"
@@ -53,7 +58,8 @@ var turn = 0;
             boxList[id] = "x";
             oturn.style.display ="inline"
             xturn.style.display ="none"
-        }else{
+            turn = 'o'
+        }else if(turn=="o"){
             box.style.backgroundImage = "url('img/cercle.png')"
             box.style.backgroundSize = "70px"
             box.style.backgroundRepeat = "no-repeat"
@@ -61,10 +67,12 @@ var turn = 0;
             boxList[id] = "o"
             oturn.style.display ="none"
             xturn.style.display ="inline"
-        }
+            turn = 'x'
 
+        }
         box.onclick = null;
             verifGagne()
+            console.log(boxList)
         }
         function verifGagne(){
             if(boxList[0] == boxList[1] && boxList[1] == boxList[2] && boxList[0] !== '' && boxList[1] !== '' && boxList[2] !== ''){
@@ -98,8 +106,6 @@ var turn = 0;
             else if(boxList[2] == boxList[4] && boxList[4] == boxList[6] && boxList[2] !== '' && boxList[4] !== '' && boxList[6] !== ''){
                 win = boxList[2]
                 checkWin()
-            }else if(boxList[0] !== "" && boxList[1] !== "" && boxList[2] !== "" && boxList[3] !== "" && boxList[4] !== "" && boxList[5] !== "" && boxList[6] !== "" && boxList[7] !== "" && boxList[8] !== ""){
-                win=""
-                checkWin()
             }
         }
+            

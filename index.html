@@ -6,33 +6,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Morpion</title>
     <script type="text/javascript" src="game.js"></script>
-    <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+<link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="img/favicon.ico">
 </head>
 <body>
     <div class="app">
-        <div class="game">
-            <div onclick="checkCase(0)" id="0" class="case"></div>
-            <div onclick="checkCase(1)" id="1" class="case"></div>
-            <div onclick="checkCase(2)" id="2" class="case"></div>
-            <div onclick="checkCase(3)" id="3" class="case"></div>
-            <div onclick="checkCase(4)" id="4" class="case"></div>
-            <div onclick="checkCase(5)" id="5" class="case"></div>
-            <div onclick="checkCase(6)" id="6" class="case"></div>
-            <div onclick="checkCase(7)" id="7" class="case"></div>
-            <div onclick="checkCase(8)" id="8" class="case"></div>
+        <div class="menu-interface" id="menu-interface">
+            <div id="menu">
+                <p class="menu-title">Jeu du morpion</p>
+                <a class="menu-subtitle" onclick="game()">Commencer</a>   
+            </div>
         </div>
-        <div class="infos">
-            <div  id="text-info"  style="display:none" class="text-info">
-                <p style="display:none" id="x-win">Le joueur X a gagné</p>
-                <p style="display:none" id="o-win">Le joueur O a gagné</p>
-                <p style="display:none" id="x-turn">C'est au tour du joueur X</p>
-                <p style="display:none" id="o-turn">C'est au tour du joueur O</p>
-                <p style="display:none" id="egalite">Egalité! </p>
+        <div id="game-interface">
+            <div class="game">
+                <div onclick="checkCase(0)" id="0" class="case"></div>
+                <div onclick="checkCase(1)" id="1" class="case"></div>
+                <div onclick="checkCase(2)" id="2" class="case"></div>
+                <div onclick="checkCase(3)" id="3" class="case"></div>
+                <div onclick="checkCase(4)" id="4" class="case"></div>
+                <div onclick="checkCase(5)" id="5" class="case"></div>
+                <div onclick="checkCase(6)" id="6" class="case"></div>
+                <div onclick="checkCase(7)" id="7" class="case"></div>
+                <div onclick="checkCase(8)" id="8" class="case"></div>
             </div>
-            <div class="restart-btn">
-                <a href=""   onclick="restart()">Recommencer la partie</a>
+            <div class="infos">
+                <div  id="text-info"  style="display:none" class="text-info">
+                    <p style="display:none" id="x-win">Le joueur X a gagné</p>
+                    <p style="display:none" id="o-win">Le joueur O a gagné</p>
+                    <p style="display:none" id="x-turn">C'est au tour du joueur X</p>
+                    <p style="display:none" id="o-turn">C'est au tour du joueur O</p>
+                    <p style="display:none" id="egalite">Egalité! </p>
+                </div>
+                <div class="restart-btn">
+                    <a onclick="restart()">Recommencer la partie</a>
+                </div>
             </div>
+    
         </div>
     </div>
 </body>

@@ -12,6 +12,33 @@
     flex-direction: column;
     background-color: #4e917c;
     font-family: 'Roboto', sans-serif;
+    position:relative;
+}
+.menu-interface{
+    width:100%;
+    height:100VH;
+    background-color: #4e917c;
+    position:absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#menu{
+    color:white;
+    background-color: #7CCFB6;
+    border-radius:30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding:1rem;
+}
+.menu-title{
+    font-size:3rem;
+    font-weight: bold;
+}
+.menu-subtitle{
+    margin-top:10PX;
+    font-weight: bold;
 }
 .game{
     display:grid;   
