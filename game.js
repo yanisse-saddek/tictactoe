@@ -10,7 +10,7 @@ function game(){
     function restart(){
         boxList = ["","","","","","","","",""]
         $("#game-interface").load(location.href + " #game-interface");
-    }
+    } 
     function checkWin(){
         oturn = document.getElementById('o-turn');
         egalite = document.getElementById('egalite');
@@ -46,9 +46,9 @@ function game(){
         box = document.getElementById(id);
         oturn = document.getElementById('o-turn');
         xturn = document.getElementById('x-turn');
-        textinfo = document.getElementById('text-info')
-        textinfo.style.display = "INLINE "
 
+        infos = document.getElementById('infos')
+        infos.style.display = "flex"
     
         if(turn == "x"){
             box.style.backgroundImage = "url('img/croix.png')"
@@ -74,37 +74,56 @@ function game(){
             verifGagne()
             console.log(boxList)
         }
+        function caseColor(case1, case2, case3){
+            case1 = document.getElementById(case1.id)
+            case2 = document.getElementById(case2.id)
+            case3 = document.getElementById(case3.id)
+            var color = "3px solid #4e917c";
+            case1.style.border = color;
+            case2.style.border = color;
+            case3.style.border = color;
+        }
         function verifGagne(){
+            var allBox = document.getElementsByClassName('case')
+
             if(boxList[0] == boxList[1] && boxList[1] == boxList[2] && boxList[0] !== '' && boxList[1] !== '' && boxList[2] !== ''){
                 win = boxList[0]
+                caseColor(allBox[0], allBox[1], allBox[2])
                 checkWin()
             }
             else if(boxList[3] == boxList[4] && boxList[4] == boxList[5] && boxList[3] !== '' && boxList[4] !== '' && boxList[5] !== ''){
                 win = boxList[3]
+                caseColor(allBox[3], allBox[4], allBox[5])
                 checkWin()
             }
             else if(boxList[6] == boxList[7] && boxList[7] == boxList[8] && boxList[6] !== '' && boxList[7] !== '' && boxList[8] !== ''){
                 win = boxList[6]
+                caseColor(allBox[6], allBox[7], allBox[8])
                 checkWin()
             }
             else if(boxList[0] == boxList[3] && boxList[3] == boxList[6] && boxList[0] !== '' && boxList[3] !== '' && boxList[6] !== ''){
                 win = boxList[0]
+                caseColor(allBox[0], allBox[3], allBox[6])
                 checkWin()
             }
             else if(boxList[1] == boxList[4] && boxList[4] == boxList[7] && boxList[1] !== '' && boxList[4] !== '' && boxList[7] !== ''){
                 win = boxList[1]
+                caseColor(allBox[1], allBox[4], allBox[7])
                 checkWin()
             }
             else if(boxList[2] == boxList[5] && boxList[5] == boxList[8] && boxList[2] !== '' && boxList[5] !== '' && boxList[8] !== ''){
                 win = boxList[2]
+                caseColor(allBox[2], allBox[5], allBox[8])
                 checkWin()
             }
             else if(boxList[0] == boxList[4] && boxList[4] == boxList[8] && boxList[0] !== '' && boxList[4] !== '' && boxList[8] !== ''){
                 win = boxList[0]
+                caseColor(allBox[0], allBox[4], allBox[8])
                 checkWin()
             }
             else if(boxList[2] == boxList[4] && boxList[4] == boxList[6] && boxList[2] !== '' && boxList[4] !== '' && boxList[6] !== ''){
                 win = boxList[2]
+                caseColor(allBox[2], allBox[4], allBox[6])
                 checkWin()
             }
         }
