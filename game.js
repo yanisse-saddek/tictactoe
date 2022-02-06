@@ -79,9 +79,9 @@ function game(){
             case2 = document.getElementById(case2.id)
             case3 = document.getElementById(case3.id)
             var color = "3px solid #4e917c";
-            case1.style.border = color;
-            case2.style.border = color;
-            case3.style.border = color;
+            case1.style.outline = color;
+            case2.style.outline = color;
+            case3.style.outline = color;
         }
         function verifGagne(){
             var allBox = document.getElementsByClassName('case')
