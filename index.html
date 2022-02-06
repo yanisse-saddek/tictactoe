@@ -5,10 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Morpion</title>
-    <script type="text/javascript" src="game.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
-<link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="img/favicon.ico">
 </head>
 <body>
@@ -19,6 +18,17 @@
                 <a class="menu-subtitle" onclick="game()">Commencer</a>   
             </div>
         </div>
+        <div class="score">
+            <div class="cross-score">
+                <img src="img/croix.png" alt="">
+                <p id="cross-score"></p>
+            </div>
+            <div class="circle-score">
+                <img src="img/cercle.png" alt="">
+                <p id="circle-score"></p>
+            </div>
+        </div>
+
         <div id="game-interface">
             <div class="game">
                 <div onclick="checkCase(0)" id="0" class="case"></div>
@@ -47,4 +57,5 @@
         </div>
     </div>
 </body>
+<script type="text/javascript" src="game.js"></script>
 </html>

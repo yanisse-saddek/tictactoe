@@ -96,3 +96,27 @@
     font-weight: bold;
     color:white
 }
+.score{
+    display: flex;
+    justify-content: space-between;
+    background-color: #7CCFB6;
+    height:100px;
+    width:400px;
+    border-radius: 50px;
+    margin-bottom:30px;
+}
+.score img{
+    height:40px;
+    margin:20px
+}
+.score div{
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    color:white;
+    font-size:2rem;
+}
+.circle-score{
+    display: flex;
+    flex-direction: row-reverse;
+}

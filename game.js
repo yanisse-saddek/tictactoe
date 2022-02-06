@@ -3,14 +3,21 @@ function game(){
     appgame.style.display = "inline"
     menu = document.getElementById('menu-interface')
     menu.style.display = "none"
+    
 }
     var turn = "x";
     var boxList = ["","","","","","","","",""]
     win = ""
+    scoreX = 0;
+    scoreO = 0
+    console.log('coucou', scoreX)
+    var crossScore = document.getElementById('cross-score').innerHTML = scoreX
+    var crossScore = document.getElementById('circle-score').innerHTML = scoreO
+
     function restart(){
         boxList = ["","","","","","","","",""]
         $("#game-interface").load(location.href + " #game-interface");
-    } 
+        }
     function checkWin(){
         oturn = document.getElementById('o-turn');
         egalite = document.getElementById('egalite');
@@ -19,6 +26,10 @@ function game(){
         owin = document.getElementById('o-win');
 
     if (win == "x"){
+        scoreX = scoreX + 1
+        crossScore = document.getElementById('cross-score').innerHTML =  scoreX
+        console.log("score x",scoreX)
+
         console.log('x a gagné')
         var allBox = document.getElementsByClassName('case')
         for(i=0; i<allBox.length; i++){
@@ -28,13 +39,16 @@ function game(){
         xwin.style.display ="inline" 
         }
         }else if(win == "o"){
+        scoreO = scoreO + 1
+        circleScore = document.getElementById('circle-score').innerHTML = scoreO
         console.log('o a gagné')
         var allBox = document.getElementsByClassName('case')
         for(i=0; i<allBox.length; i++){
         allBox[i].onclick = null  
         oturn.style.display ="none"
         xturn.style.display ="none";   
-        owin.style.display ="inline"     
+        owin.style.display ="inline"  
+        scoreO++   
         }
     }else if(win===""){
         oturn.style.display ="none"
