@@ -173,5 +173,8 @@ function verifGagne() {
     win = boxList[2];
     caseColor(allBox[2], allBox[4], allBox[6]);
     checkWin();
+  }else if(boxList[0] !== "" && boxList[1] !== "" && boxList[2] !== "" && boxList[3] !== "" && boxList[4] !== "" && boxList[5] !== "" && boxList[6] !== "" && boxList[7] !== "" &&boxList[8] !== "" ){
+      win=""
+      checkWin()
   }
 }
